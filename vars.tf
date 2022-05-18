@@ -6,7 +6,15 @@ variable "ami" {
   }
 }
 
+variable "instance_type" {
+  default = "t2.micro"
+}
+
 variable "cdirs_remote_access" {
   type = list(string)
   default = ["177.62.157.192/32"]
+}
+
+variable "key_name" {
+  default = "terraform-aws"
 }
