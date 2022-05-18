@@ -6,7 +6,9 @@ resource "aws_instance" "dev" {
 
   # Qtd instances
   count         = 3
-  tags          = {"Name" = "dev${count.index}"}
+  tags          = {
+    "Name" = "dev${count.index}"
+  }
   vpc_security_group_ids = [aws_security_group.acesso_ssh_us_east_1.id]
 }
 
