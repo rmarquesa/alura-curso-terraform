@@ -1,6 +1,6 @@
 resource "aws_instance" "dev" {
   # Ubuntu Server 20.04 LTS - 1GB RAM - Free Tier
-  ami           = "ami-0c4f7023847b90238"
+  ami           = var.ami["us-east-1"]
   instance_type = "t2.micro"
   key_name      = "terraform-aws"
 
@@ -12,7 +12,7 @@ resource "aws_instance" "dev" {
 
 resource "aws_instance" "dev4" {
   # Ubuntu Server 20.04 LTS - 1GB RAM - Free Tier
-  ami           = "ami-0c4f7023847b90238"
+  ami           = var.ami["us-east-1"]
   instance_type = "t2.micro"
   key_name      = "terraform-aws"
   tags          = {"Name" = "dev4"}
@@ -25,7 +25,7 @@ resource "aws_instance" "dev5" {
   provider      = aws.us-east-2
   
   # Ubuntu Server 20.04 LTS - 1GB RAM - Free Tier
-  ami           = "ami-0eea504f45ef7a8f7"
+  ami           = var.ami["us-east-2"]
   instance_type = "t2.micro"
   key_name      = "terraform-aws"
   tags          = {"Name" = "dev5"}

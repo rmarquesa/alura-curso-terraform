@@ -14,7 +14,7 @@ resource "aws_security_group" "acesso_ssh_us_east_1" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["177.62.157.192/32"]
+    cidr_blocks = var.cdirs_remote_access
     #ipv6_cidr_blocks = [aws_vpc.main.ipv6_cidr_block]
   }
 
@@ -47,7 +47,7 @@ resource "aws_security_group" "acesso_ssh_us_east_2" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["177.62.157.192/32"]
+    cidr_blocks = var.cdirs_remote_access
     #ipv6_cidr_blocks = [aws_vpc.main.ipv6_cidr_block]
   }
 
@@ -63,5 +63,4 @@ resource "aws_security_group" "acesso_ssh_us_east_2" {
     Name  = "ssh"
   }
 
-  
 }
