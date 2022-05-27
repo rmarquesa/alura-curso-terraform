@@ -1,3 +1,14 @@
+variable "notification" {
+  type = map(string)
+  default = {
+    "cloud_manager" = ""
+    "cloud_administrator" = "rodrigomarquesalves@gmail.com"
+    "cloud_architect" = ""
+    "cloud_engineer" = ""
+    "cloud_developer" = ""
+  }
+}
+
 variable "ami" {
   type = map(string)
   default = {
@@ -17,4 +28,9 @@ variable "cdirs_remote_access" {
 
 variable "key_name" {
   default = "terraform-aws"
+}
+
+variable "budget_monthly" {
+  type = number
+  default = 5
 }
